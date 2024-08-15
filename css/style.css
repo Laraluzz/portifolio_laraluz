@@ -2,6 +2,9 @@ body {
   background-color: #ffffff;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
+  font-size: medium;
+  color:black;
+  line-height: normal;
   font-style: normal;
 }
 
@@ -9,42 +12,29 @@ img {
   width: 100%;
 }
 
-.button, li{
+.button,.button:visited{
   display: inline-block;
   border: 3px solid;
   border-color: #77ACF1;
   color:#77ACF1;
   padding: 10px;
-  text-decoration:none;
   border-radius: 10px;
   transition: 0.2s;
   font-weight:500;
   background-color:white;
 }
-.button:hover, li:hover{
+.button:hover{
   background-color: #687EFF;
   border:none;
-  color: #ffffff;
-}
-
-li a , .contact-info a{
   text-decoration:none;
-  color:#77ACF1;
-}
-li a:hover{
-  background-color: #687EFF;
-  border:none;
   color: #ffffff;
 }
-.contact-info a:hover{
-  background-color:none;
-}
-#contact{
-  width: 5%;
-  background-color:none;
-  border-color:none;
-  border:none;
-  color:none;
+.button:focus,.button:active{
+  background-color:white;
+  border: 3px solid;
+  text-decoration:none;
+  border-color: #687EFF;
+  color:#687EFF;
 }
 
 h1,h2,h3 {
