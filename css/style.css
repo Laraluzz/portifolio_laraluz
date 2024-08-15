@@ -2,14 +2,32 @@ body {
   background-color: #ffffff;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
-  font-size: medium;
-  color:black;
-  line-height: normal;
+  font-size: 16px;
+  font-weight: 300; 
+  line-height: 1.6;
   font-style: normal;
 }
 
 img {
   width: 100%;
+}
+
+a, a:visited{
+  display: inline-block;
+  color: #687EFF;
+  border: 3px solid;
+  border-color: #687EFF;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #77ACF1;
+  border: 3px solid;
+  border-color: #77ACF1;
+  text-decoration: underline; 
+}
+a:active { 
+  color:white;
+  background-color: #687EFF;
 }
 
 .button,.button:visited{
@@ -23,20 +41,23 @@ img {
   font-weight:500;
   background-color:white;
 }
-.button:hover{
-  background-color: #687EFF;
-  border:none;
-  text-decoration:none;
-  color: #ffffff;
-}
-.button:focus,.button:active{
+.button:focus,.button:hover{
   background-color:white;
   border: 3px solid;
   text-decoration:none;
   border-color: #687EFF;
   color:#687EFF;
 }
-
+.button:active{
+  background-color: #687EFF;
+  border: 3px solid;
+  text-decoration:none;
+  border-color: #687EFF;
+  color: #ffffff;
+}
+.button-info, .button-info:hover{
+  border:none;
+}
 h1,h2,h3 {
   line-height: 1.4;
 }
