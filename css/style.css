@@ -1,13 +1,33 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #ffffff;
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  font-weight: 300; 
+  font-size: 1.6rem;
+  color:#000;
   line-height: 1.6;
-  font-style: normal;
+}
+h1,h2,h3 {
+  line-height: 1.4;
 }
 
+h1 {
+  font-size: 2.75em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: 400;
+}
 img {
   width: 100%;
 }
@@ -15,14 +35,10 @@ img {
 a, a:visited{
   display: inline-block;
   color: #687EFF;
-  border: 3px solid;
-  border-color: #687EFF;
   text-decoration: none;
 }
 a:hover, a:focus {
   color: #77ACF1;
-  border: 3px solid;
-  border-color: #77ACF1;
   text-decoration: underline; 
 }
 a:active { 
@@ -55,27 +71,8 @@ a:active {
   border-color: #687EFF;
   color: #ffffff;
 }
-.button-info, .button-info:hover{
-  border:none;
-}
-h1,h2,h3 {
-  line-height: 1.4;
-}
 
-h1 {
-  font-size: 2.75em;
-  font-weight: 700;
-}
 
-h2 {
-  font-size: 2.25em;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.75em;
-  font-weight: 400;
-}
 
 
 
