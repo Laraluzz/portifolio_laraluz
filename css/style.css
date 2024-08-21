@@ -5,10 +5,10 @@ html {
   box-sizing: border-box;
 }
 header {
-  background-color:black;
-  position: relative;
+  background-color:white;
+  position: fixed;
   text-align: center;
-  padding: 1em;
+  padding-block: 1em;
   /*this gives a little white line ------------*/
 	width: 100%; 
 	box-shadow: 0 11px 12px rgba(0, 0, 0, 0.5)  ; 
@@ -18,43 +18,42 @@ header {
 body {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color:#000;
-  line-height: 1.6;
+  line-height: 1.4;
 }
+
+
 h1,h2,h3 {
   line-height: 1.4;
 }
 
 h1 {
-  font-size: 3.2em;
-  font-weight: 700;
-}
-
-h2 {
   font-size: 2.4em;
   font-weight: 700;
 }
 
-h3 {
+h2 {
   font-size: 2em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 500;
+}
+h4 {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+p, .skills-tools-list li{
+  font-size: 1.4em;
   font-weight: 400;
 }
 img {
   width: 100%;
 }
 
-
-a, a:visited{
-  color: #687EFF;
-}
-a:hover, a:focus {
-  color: #77ACF1;
-}
-a:active { 
-  color:white;
-  background-color: #687EFF;
-}
 nav{
   display: inline-block;
   width: 100%;
@@ -66,24 +65,27 @@ nav > ul {
 nav > ul > li {
   display: inline-block;
 }
-nav > ul > li > a, a:visited{
-  background-color: #77ACF1;
-  color: #ffffff;
+nav > ul > li > a{
+  color: #77ACF1;
   padding: 15px;
+  text-decoration: none;
+  margin:0 5px;
   text-transform: uppercase;
   font-weight: 700;
-  border-radius: 10px;
   transition: 0.2s;
 }
-nav > ul > li > a:hover, a:focus {
-  background-color: #687EFF;
-  color: #ffffff;
+nav > ul > li > a:hover, nav > ul > li > a:focus{
+  color: #687EFF;
 }
+nav > ul > li > a:active{
+  color: #687EFF;
+}
+
 #hero {
-  background-color: black;
   padding: 20px 0;
-  color:white;
-  display: inline-block;
+  width: 100%;
+}
+#hero svg{
   width: 100%;
 }
 #project h1{
@@ -93,20 +95,35 @@ nav > ul > li > a:hover, a:focus {
 #hero h1 {
   text-align: center; /* Centers text */
 }
+#hero span {
+  display: block;
+}
 #work h2{
   width: 100%;
   text-align: center;
 }
 #contact{
-  display:inline-block;
-  width: 100%;
-  text-align: center;
-  margin: 25px 0;
+  background-color: #000;
+  color:#ffffff;
+  width:100%;
+  text-align:center;
+  padding:15px 0;
+  margin-top:25px;
+}
+
+main {
+  padding-top: 133px;
 }
 .container {
   padding: 0 15px;
 }
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 .logo {
+  width: 5.5em;
   max-width: 250px;
 }
 .work-project, .story-content, .skills-tools-list, .project-part{
@@ -116,13 +133,13 @@ nav > ul > li > a:hover, a:focus {
   margin:0 10px;
   width:2.4em;
 }
-
-
 .button{
   display: inline-block;
+  font-size: 1.4rem;
   border: 3px solid;
   border-color: #77ACF1;
   color:#77ACF1;
+  text-decoration: none;
   padding: 10px;
   border-radius: 10px;
   transition: 0.2s;
@@ -143,8 +160,213 @@ nav > ul > li > a:hover, a:focus {
   border-color: #687EFF;
   color: #ffffff;
 }
+.button-cv{
+  display: inline-block;
+  font-size: 1.4rem;
+  border: 3px solid;
+  border-color: #90D165;
+  color:#90D165;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.2s;
+  font-weight:500;
+}
+.button-cv:visited{
+  color:#90D165;
+}
+.button-cv:focus,.button-cv:hover{
+  border: 3px solid;
+  border-color: #A6CB12;
+  color:#A6CB12;
+}
+.button-cv:active{
+  background-color: #A6CB12;
+  border: 3px solid;
+  text-decoration:none;
+  border-color: #A6CB12;
+  color: #ffffff;
+}
+.work-project-pic img{
+  border-radius: 10px;
+}
+
+@keyframes stars1{
+  0% {
+    transform:scale(50%);
+  }
+  100% {
+    transform:scale(100%);
+ 
+  }
+}
+@keyframes stars2{
+  0% { transform: translate(0,  -0px); }
+    50%  { transform: translate(0, 30px); }
+    100%   { transform: translate(0, 0px); }   
+} 
+@keyframes color-change {
+  0% {fill: #687EFF;}
+  25% {fill: #77ACF1;}
+  50% {fill: #90D165;}
+  100% {fill: #A6CB12;}
+} 
+
+#star1{
+  fill: #000;
+  position:relative;
+  transform-origin: top left;
+  animation: stars1 2s infinite ease;
+}
+#star2, #star4, #star6{
+  fill: #000;
+  position: relative;
+  animation: stars2 2s infinite ease;
+}
 
 
+@media only screen and (min-width: 640px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+  }
+
+  nav {
+    width: auto;
+    float: right;
+    margin-top: 4px;
+  }
+  .main{
+    padding-top:99px;
+  }
+  .button, .button-cv{
+    font-size: 1.8rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .col-md-6 {
+    padding: 10px;
+    width: 50%;
+  }
+  [class*="col-"] {
+    float: left;
+  }
+  .hero-pic-profile{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 32em;
+  }
+
+}
+@media only screen and (min-width: 1024px) {
+  .col-md-6 {
+    padding: 10px;
+    width: 60%;
+  }
+  [class*="col-"] {
+    float: left;
+  }
+  .button, .button-cv{
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 3em;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 2.4em;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 2em;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+  p, .skills-tools-list li {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+
+ 
+}
+@media only screen and (min-width: 1440px) {
+  .col-md-6 {
+    padding: 10px;
+    width: 60%;
+  }
+  [class*="col-"] {
+    float: left;
+  }
+  .button, .button-cv{
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 4em;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 3em;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 2.5em;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  p, .skills-tools-list li {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .col-md-6 {
+    padding: 10px;
+    width: 60%;
+  }
+  [class*="col-"] {
+    float: left;
+  }
+  .button, .button-cv{
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 4em;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 3em;
+    font-weight: 700;
+  }
+  
+  h3 {
+    font-size: 2.5em;
+    font-weight: 500;
+  }
+  h4 {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  p, .skills-tools-list li {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+
+}
 
 
 
