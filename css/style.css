@@ -57,13 +57,14 @@ img {
 nav{
   display: inline-block;
   width: 100%;
+
 }
 nav > ul {
   list-style-type: none;
   padding: 0;
 }
-nav > ul > li {
-  display: inline-block;
+nav > ul > li:not(:last-child){
+  display: none;
 }
 nav > ul > li > a{
   color: #77ACF1;
@@ -79,6 +80,30 @@ nav > ul > li > a:hover, nav > ul > li > a:focus{
 }
 nav > ul > li > a:active{
   color: #687EFF;
+}
+.navtoggle.responsive li  {
+  display: block;
+}
+.navtoggle.responsive nav {
+  padding: 24px 0 0;
+}
+.navtoggle.responsive li  {
+  display: block;
+  padding: 10px 0;
+  border-top: 1px solid #77ACF1;
+}
+
+.navtoggle.responsive li:last-child  {
+  padding: 0 0 10px;
+}
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 32px;
+}
+.navtoggle, .navtoggle.responsive {
+  position: relative;
 }
 
 #hero {
@@ -192,23 +217,32 @@ main {
   border-color: #A6CB12;
   color: #ffffff;
 }
-.hero-pic-profile img{
- width:15em;
-}
-#starpurple, #stargreen{
-  transform:scale(0.5);
-}
-#starpurple{
- 
-  transform: translate(0, -50%);
-}
 .hero-pic-profile{
   text-align: center;
-  display:flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+
+
 }
+.hero-pic-profile img{
+ width:15em;
+ position: relative;
+ display: inline-block; 
+ 
+}
+.hero-pic-profile svg{
+  position:absolute;
+  transform: scale(0.3);
+  top: 0;
+  bottom:0;
+  left: 0;
+  
+}
+.green > svg{
+  padding-top:5em;
+}
+
+
+
+
 .work-head{
   width:100%;
   text-align: center;
@@ -282,6 +316,12 @@ main {
     padding: 20px 0 13px;
   }
 
+  nav > ul > li:not(:last-child){
+    display: inline-block;
+  }
+  nav > ul > li:last-child {
+    display: none;
+  }
   nav {
     width: auto;
     float: right;
