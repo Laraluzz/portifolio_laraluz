@@ -11,9 +11,13 @@ header {
   padding-block: 1em;
   /*this gives a little white line ------------*/
 	width: 100%; 
-	box-shadow: 0 11px 12px rgba(0, 0, 0, 0.5)  ; 
-	-webkit-box-shadow: 0 11px 12px rgba(0, 0, 0, 0.5)  ; 
-	-moz-box-shadow: 0 11px 12px rgba(0, 0, 0, 0.5)  ; 
+	
+}
+header.scrolled nav ul li a{
+  color:#90D165;
+}
+header.scrolled nav ul li a:hover{
+  color:#A6CB12;
 }
 body {
   font-family: "IBM Plex Sans", sans-serif;
@@ -42,10 +46,15 @@ h3 {
   font-size: 1.8em;
   font-weight: 500;
 }
-h4 {
+h4{
   font-size: 1.4em;
   font-weight: 500;
 }
+span{
+  font-size: 1em;
+  font-weight: 300;
+}
+
 p, .skills-tools-list li{
   font-size: 1.4em;
   font-weight: 400;
@@ -63,7 +72,7 @@ nav > ul {
   list-style-type: none;
   padding: 0;
 }
-nav > ul > li:not(:last-child){
+nav > ul > li{
   display: none;
 }
 nav > ul > li > a{
@@ -93,37 +102,38 @@ nav > ul > li > a:active{
   border-top: 1px solid #77ACF1;
 }
 
-.navtoggle.responsive li:last-child  {
-  padding: 0 0 10px;
-}
-.navtoggle li .icon {
-  position: absolute;
-  right: 0;
-  top: 2px;
-  font-size: 32px;
-}
 .navtoggle, .navtoggle.responsive {
   position: relative;
 }
-
+ a .icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  fill:#77ACF1;
+  right: 16px;
+  top: 24px;
+  transition:0.5s;
+}
+a .icon :hover, a .icon :focus {
+  fill:#687EFF;
+}
 #hero {
   padding: 20px 0;
   width: 100%;
 }
 #hero svg{
   width: 100%;
+  height: 100%;
 }
+
 #project h1{
   text-align: center;
 }
 
-#hero h1 {
-  text-align: center; /* Centers text */
-}
-#hero span {
-  display: block;
-}
+
 #work h2{
+  font-size: 1.5em;
+  font-weight: 700;
   margin:0;
 }
 #work .container{
@@ -142,7 +152,7 @@ nav > ul > li > a:active{
 }
 
 main {
-  padding-top: 139.64px;
+  padding-top: 100px;
 }
 .container {
   padding: 0 15px;
@@ -218,30 +228,34 @@ main {
   color: #ffffff;
 }
 .hero-pic-profile{
-  text-align: center;
-
+  
+  position: relative;
+  display: grid; 
+  justify-items: center;
 
 }
 .hero-pic-profile img{
  width:15em;
- position: relative;
- display: inline-block; 
- 
-}
-.hero-pic-profile svg{
-  position:absolute;
-  transform: scale(0.3);
-  top: 0;
-  bottom:0;
-  left: 0;
-  
-}
-.green > svg{
-  padding-top:5em;
 }
 
+.purple{
+  position: absolute;
+  right: 60%;
+  width: 60px;
+  z-index: 10;
+}
+.green{
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  width: 60px;
+  z-index: 10;
+}
 
-
+.copyright{
+  font-size: 1rem;
+  font-weight: 400;
+}
 
 .work-head{
   width:100%;
@@ -272,36 +286,18 @@ main {
 
 @keyframes stars{
   0% {
-    transform:scale(0.5);
+    transform:scale(0.4);
   }
   50% {
-    transform:scale(1);
+    transform:scale(0.6);
   }
   100%{
-    transform:scale(0.5);
+    transform:scale(0.4);
   }
 }
- @keyframes move{
-  0% { transform: translate(0,  -5px); }
-    50%  { transform: translate(0, 0px); }
-    100%   { transform: translate(0, -5px); }   
-} 
-@keyframes move2{
-  0% { transform: translate(0,  5px); }
-    50%  { transform: translate(0, 0px); }
-    100%   { transform: translate(0, 5px); }   
-} 
 
-#pc, #big-pc, #mobile, #ipad{
-  animation: move2 2s ease infinite;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-#AI, #CSS, #Figma, #JS, #ID, #AE, #HTML, #XD{
-  animation: move 2s ease infinite;
-  transform-origin: center;
-  transform-box: fill-box;
-}
+
+
 #star1, #star2{
   fill: #000;
   animation: stars 3s ease infinite;
@@ -315,13 +311,16 @@ main {
     text-align: unset;
     padding: 20px 0 13px;
   }
-
-  nav > ul > li:not(:last-child){
-    display: inline-block;
-  }
-  nav > ul > li:last-child {
+  a .icon {
     display: none;
   }
+  nav > ul > li{
+    display: inline-block;
+  }
+  .purple, .green{
+   width:100px;
+  }
+ 
   nav {
     width: auto;
     float: right;
@@ -401,10 +400,12 @@ main {
     font-weight: 400;
   }
   p, .skills-tools-list li {
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 400;
   }
-
+  #work h2{
+    font-size: 2em;
+  }
  
 }
 @media only screen and (min-width: 1440px) {
