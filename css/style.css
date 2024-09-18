@@ -4,6 +4,7 @@ html {
 * {
   box-sizing: border-box;
 }
+body {margin: 0;}
 header {
   background-color:white;
   position: fixed;
@@ -11,13 +12,17 @@ header {
   padding-block: 1em;
   /*this gives a little white line ------------*/
 	width: 100%; 
-	
+	z-index:1;
+}
+header.scrolled{
+  z-index: 11;
 }
 header.scrolled nav ul li a{
-  color:#90D165;
+  color:#CDE378;
 }
 header.scrolled nav ul li a:hover{
   color:#A6CB12;
+
 }
 body {
   font-family: "IBM Plex Sans", sans-serif;
@@ -33,18 +38,26 @@ h1,h2,h3 {
 }
 
 h1 {
-  font-size: 2.4em;
+  font-family: "Caladea", serif;
   font-weight: 700;
+  font-size: 2.4em;
+  font-style: normal;
+  text-align: center;
 }
 
 h2 {
-  font-size: 2em;
+  font-family: "Caladea", serif;
   font-weight: 700;
+  font-size: 2em;
+  font-style: normal;
+  overflow: hidden;
 }
 
 h3 {
+  font-family: "Caladea", serif;
+  font-weight: 700;
   font-size: 1.8em;
-  font-weight: 500;
+  font-style: normal;
 }
 h4{
   font-size: 1.4em;
@@ -169,10 +182,45 @@ main {
 .story-content, .skills-tools-list, .project-part{
   margin: 25px 0;
 }
+.button-email > svg{
+  fill:#77ACF1;
+  width:5em;
+  transition: 1s;
+  margin-bottom: 10px;
+}
+.button-email:hover > svg{
+  fill:#687EFF;
+}
 .button-social > svg{
   margin:0 10px;
   width:2.4em;
 }
+.arrow{
+  
+  width:80%;
+}
+
+.arrow path{
+  transition:all 1s;
+}
+
+.arrow:hover path {
+  fill:white;
+}
+.arrow .bola{
+  transform-origin: center;
+  transition: all 1s; 
+  transform:scale(0,0);
+
+}
+.arrow:hover .bola {
+  
+  transform:scale(1,1);
+  
+}
+
+
+
 .button{
   display: inline-block;
   font-size: 1.4rem;
@@ -204,8 +252,8 @@ main {
   display: inline-block;
   font-size: 1.4rem;
   border: 3px solid;
-  border-color: #90D165;
-  color:#90D165;
+  border-color: #CDE378;
+  color:#CDE378;
   text-decoration: none;
   padding: 10px;
   border-radius: 10px;
@@ -213,7 +261,7 @@ main {
   font-weight:500;
 }
 .button-cv:visited{
-  color:#90D165;
+  color:#CDE378;
 }
 .button-cv:focus,.button-cv:hover{
   border: 3px solid;
@@ -269,19 +317,70 @@ main {
 .work-project-pic img{
   border-radius: 10px;
 }
+.project-part-description{
+  overflow: hidden;
+  margin-top: -20px;
+}
+.project-part-pic img{
+  width: 100%;
+  
+
+}
+.project-part-no-float img{
+  width: 100%;
+}
+.project-part img{
+  
+  object-fit: cover;
+  
+  border-radius: 50px;
+}
+.line img{
+
+  margin-left: 50px;
+ 
+  width: 0.5em;
+ 
+}
+.pin img{
+  float: left;
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 7em;
+}
+.question img{
+  margin-right: 20px;
+  object-fit: cover;
+  
+}
+.answer img{
+  object-fit: cover;
+
+}
 .work-project{
   display: flex;
   flex-direction: column;
   gap:2em;
+  margin-bottom:5em;
 }
+
+.project-part-tome {
+   align-content: center;
+}
+
+
+
 .work-project h3, .work-project p{
   margin:0;
 }
+
 .work-project-content{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap:2em;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 @keyframes stars{
@@ -294,6 +393,30 @@ main {
   100%{
     transform:scale(0.4);
   }
+}
+.work-head, .work-project{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range:entry 0% cover 40%;
+}
+@keyframes appear{
+ from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+
+}
+.project-cover img{
+
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 20px;
+  transform: translateY(-10%);
+ 
 }
 
 
@@ -310,6 +433,14 @@ main {
   header {
     text-align: unset;
     padding: 20px 0 13px;
+  }
+  h2{
+    margin-bottom:0;
+  }
+  h3{
+    margin: 24px 5px;
+    margin-bottom: 0;
+   
   }
   a .icon {
     display: none;
@@ -357,14 +488,27 @@ main {
   }
   .work-project-pic{
     width: 40%;
+    transition:width 0.5s;
   }
+
   .work-project-content{
     width:60%;
+   
   }
+
   .work-project-pic img{
     height: 100%;
     object-fit: cover;
   }
+  .project-part-tome img{
+    float: right;
+    margin: 0px;
+    object-fit: cover;
+    width: 30%;
+    shape-outside: circle();
+    margin-top: -5%;
+  }
+
 
 }
 @media only screen and (min-width: 1024px) {
@@ -393,7 +537,7 @@ main {
   
   h3 {
     font-size: 2em;
-    font-weight: 500;
+  
   }
   h4 {
     font-size: 1.8em;
@@ -406,34 +550,43 @@ main {
   #work h2{
     font-size: 2em;
   }
+  .project-part img{
+    float: right;
+    margin-left: 20px;
+    object-fit: cover;
+    width: 40%;
+    border-radius: 50px;
+  }
+  .question img{
+    margin-right: 20px;
+    object-fit: cover;
+    width: 40%;
+  }
+  .answer img{
+    margin-left: 50%;
+    object-fit: cover;
+    width: 40%;
+  }
+  .project-part-feat{
+    display: flex;
+    justify-content: center;
+  }
+  .project-part-feat img{
+    max-height: 600px;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+  .userStories{
+    display:flex;
+    width:33%;
+  }
  
 }
 @media only screen and (min-width: 1440px) {
   .button, .button-cv{
     font-size: 2rem;
   }
-  h1 {
-    font-size: 4em;
-    font-weight: 700;
-  }
-  
-  h2 {
-    font-size: 3em;
-    font-weight: 700;
-  }
-  
-  h3 {
-    font-size: 2.5em;
-    font-weight: 500;
-  }
-  h4 {
-    font-size: 2em;
-    font-weight: 400;
-  }
-  p, .skills-tools-list li {
-    font-size: 1.8em;
-    font-weight: 400;
-  }
+
 }
 @media only screen and (min-width: 1920px) {
   .col-md-6 {
@@ -458,7 +611,7 @@ main {
   
   h3 {
     font-size: 2.5em;
-    font-weight: 500;
+  
   }
   h4 {
     font-size: 2em;
