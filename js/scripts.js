@@ -28,20 +28,21 @@ function menuToggle() {
 
 
 
+
 window.addEventListener('scroll', function() { 
-  const header = document.getElementById('header'); 
+  const header = document.querySelector('header'); 
   const logo = document.querySelector(".logo");
- 
+
 
   if (window.scrollY > 50) { 
+    
       header.style.backgroundColor = 'black';
       header.style.transition =  '0.5s'
       header.classList.add('scrolled');
-   
       logo.src = "img/logowhite.svg";
      
   } else { 
-      header.style.backgroundColor = 'white'; // Original color 
+      header.style.backgroundColor = 'white'; 
       logo.src = "img/logo.svg";
       header.classList.remove('scrolled');
   } 
@@ -73,4 +74,3 @@ recstar.addEventListener('click', () => {
   }
 });
 
-  
