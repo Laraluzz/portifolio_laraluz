@@ -138,7 +138,37 @@ a .icon :hover, a .icon :focus {
   width: 100%;
   height: 100%;
 }
+#intro h3{
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-left:10px;
+  float: left;
+  
+}
+#intro svg{
 
+  width: 60px;
+  height:60px;
+  margin:0;
+  display: inline-block;
+}
+#intro img{
+  visibility: hidden;
+}
+#intro span{
+  font-family: "Caladea", serif;
+  font-weight: 700;
+  font-style: italic;
+ 
+}
+
+.intro-container{
+  display: flex;
+  margin: 15% 0;
+  flex-direction: row-reverse;
+  align-items: center;
+}
 #project h1{
   text-align: center;
 }
@@ -507,6 +537,9 @@ main {
     width: 30%;
     shape-outside: circle();
     margin-top: -5%;
+  }
+  #intro img{
+    visibility: visible;
   }
 
 
